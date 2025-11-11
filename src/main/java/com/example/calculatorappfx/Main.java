@@ -13,7 +13,6 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("calculator-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        //Scene scene = new Scene(fxmlLoader.load(), 220, 280);
         stage.setTitle("Calculator");
         stage.setScene(scene);
         stage.sizeToScene();
