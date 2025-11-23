@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -24,12 +25,28 @@ public class MasterController {
 
     @FXML
     private TextField display;
+    @FXML
+    private TextField inputDisplay;
+
+    @FXML
+    private TextField outputDisplay;
+
+    @FXML
+    private TextField activeDisplay;
+
+    @FXML
+    private ComboBox<String> fromUnit;
+
+    @FXML
+    private ComboBox<String> toUnit;
+
+    @FXML
+    private ComboBox<String> category;
 
     private CalculateHelper helper;
 
-    private double firstOperand = 0;
-    private String pendingOperation = "";
-    private boolean startNewNumber = true;
+    private ConverterHelper converterHelper;
+
 
     /**
      * Starts the default view of the calculator (at the basic calculator pane)
@@ -37,6 +54,31 @@ public class MasterController {
     @FXML
     public void initialize() {
         helper = new CalculateHelper(display);
+
+        converterHelper = new ConverterHelper(
+                inputDisplay,
+                outputDisplay,
+                fromUnit,
+                toUnit,
+                category
+        );
+
+        // Set up listeners
+        category.setOnAction(e -> converterHelper.updateUnitCombos());
+        inputDisplay.textProperty().addListener((obs, old, val) ->
+                { if ( activeDisplay == inputDisplay) {
+                    performConversion();
+                }});
+        outputDisplay.textProperty().addListener((obs, old, val) -> {
+            if (activeDisplay == outputDisplay) {
+                performConversion();
+            }
+        });
+        fromUnit.setOnAction(e -> performConversion());
+        toUnit.setOnAction(e -> performConversion());
+
+        activeDisplay = inputDisplay;
+
         switchToCalculator();
     }
 
@@ -120,7 +162,11 @@ public class MasterController {
      */
     @FXML
     private void handleClear(ActionEvent event) {
-        helper.clear();
+        if(converterPane.isVisible()){
+            converterHelper.clear();
+        }else {
+            helper.clear();
+        }
     }
 
     /**
@@ -132,5 +178,38 @@ public class MasterController {
     private void resizeStageTo(Node pane) {
         Stage stage = (Stage) rootPane.getScene().getWindow();
         stage.sizeToScene();
+    }
+
+    /**
+     * Swaps the current 'input' and 'output' display so the user can switch which display they type into.
+     * It also centers the users cursor into the swapped display so they know which one they can edit
+     * @param event - User clicking one of the two swap buttons (↑ and ↓)
+     */
+    @FXML
+    private void handleSwap(ActionEvent event) {
+        if(activeDisplay == inputDisplay){
+            activeDisplay = outputDisplay;
+            outputDisplay.setEditable(true);
+            inputDisplay.setEditable(false);
+            outputDisplay.requestFocus();
+            outputDisplay.positionCaret(outputDisplay.getText().length());
+        } else {
+            activeDisplay = inputDisplay;
+            inputDisplay.setEditable(true);
+            outputDisplay.setEditable(false);
+            inputDisplay.requestFocus();
+            inputDisplay.positionCaret(inputDisplay.getText().length());
+        }
+    }
+
+    /**
+     * Calls the helper method from ConverterHelper to do the conversion between the entered numbers
+     */
+    private void performConversion() {
+        if(activeDisplay == inputDisplay) {
+            converterHelper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+        } else {
+            converterHelper.convert(outputDisplay, inputDisplay, toUnit.getValue(), fromUnit.getValue());
+        }
     }
 }

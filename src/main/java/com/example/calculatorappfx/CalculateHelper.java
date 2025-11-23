@@ -18,7 +18,7 @@ public class CalculateHelper {
         this.display = display;
         display.setEditable(false); // user cannot type
         display.setAlignment(javafx.geometry.Pos.CENTER_LEFT);
-        display.setText("0");
+        display.setText("");
     }
 
     /**
@@ -56,11 +56,16 @@ public class CalculateHelper {
     /**
      * This functions executes the calculation and displays the results back on the screen
      */
+    //TODO: When number is returned check if after decimal is 0 and return as int
     public void calculateResult() {
         if (!pendingOperation.isEmpty()) {
             double secondOperand = Double.parseDouble(display.getText());
             firstOperand = doCalculation(firstOperand, secondOperand, pendingOperation);
-            display.setText(String.valueOf(firstOperand));
+            if(firstOperand % 1 == 0){
+                display.setText(String.valueOf((int)firstOperand));
+            } else {
+                display.setText(String.valueOf(firstOperand));
+            }
             pendingOperation = "";
             startNewNumber = true;
         }
