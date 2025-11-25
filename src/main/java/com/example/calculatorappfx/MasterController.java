@@ -12,19 +12,19 @@ import javafx.stage.Stage;
 
 public class MasterController {
     @FXML
-    private Pane calculatorPane;
+    public Pane calculatorPane;
 
     @FXML
-    private Pane converterPane;
+    public Pane converterPane;
 
     @FXML
-    private Pane scientificPane;
+    public Pane scientificPane;
 
     @FXML
-    private Pane rootPane;
+    public Pane rootPane;
 
     @FXML
-    private TextField display;
+    public TextField display;
     @FXML
     private TextField inputDisplay;
 
@@ -135,6 +135,39 @@ public class MasterController {
     private void handleNumber(ActionEvent event) {
         Button btn = (Button) event.getSource();
         helper.append(btn.getText());
+    }
+
+    @FXML
+    private void handleNumberConvert(ActionEvent event) {
+        Button btn = (Button) event.getSource();
+        String curr = activeDisplay.getText();
+        if( btn.getText().equals(".") && curr.contains(".")) return;
+        activeDisplay.setText(curr + btn.getText());
+    }
+
+    @FXML
+    private void negate(ActionEvent event) {
+        helper.negate();
+    }
+
+    @FXML
+    private void negateConvert(ActionEvent event) {
+        Button btn = (Button) event.getSource();
+        String curr = activeDisplay.getText();
+        if(curr.startsWith("-")) {
+            activeDisplay.setText(curr.substring(1));
+        } else {
+            activeDisplay.setText("-" + curr);
+        }
+    }
+
+    @FXML
+    private void backConvert(ActionEvent event) {
+        Button btn = (Button) event.getSource();
+        String curr = activeDisplay.getText();
+        if(!curr.isEmpty()) {
+            activeDisplay.setText(curr.substring(0, curr.length() - 1));
+        }
     }
 
     /**

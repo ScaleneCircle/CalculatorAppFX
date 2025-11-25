@@ -56,7 +56,6 @@ public class CalculateHelper {
     /**
      * This functions executes the calculation and displays the results back on the screen
      */
-    //TODO: When number is returned check if after decimal is 0 and return as int
     public void calculateResult() {
         if (!pendingOperation.isEmpty()) {
             double secondOperand = Double.parseDouble(display.getText());
@@ -79,6 +78,26 @@ public class CalculateHelper {
         firstOperand = 0;
         pendingOperation = "";
         startNewNumber = true;
+    }
+
+    public void negate() {
+        String current = display.getText().trim();
+
+        if (current.isEmpty() || current.equals("0")) {
+            return;
+        }
+
+        if (!pendingOperation.isEmpty() && startNewNumber) {
+            firstOperand = -firstOperand;
+            display.setText(String.valueOf(firstOperand));
+            return;
+        }
+
+        if (current.startsWith("-")) {
+            display.setText(current.substring(1));
+        } else {
+            display.setText("-" + current);
+        }
     }
 
     /**
