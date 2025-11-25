@@ -19,7 +19,7 @@ public class CalculateHelperTest {
         try {
             Platform.startup(() -> {});
         } catch (IllegalStateException e) {
-            // Toolkit already initialized, ignore
+
         }
     }
 
@@ -73,7 +73,7 @@ public class CalculateHelperTest {
         helper.setOperation("-");
         helper.append("3");
         helper.calculateResult();
-        assertEquals("7", display.getText());
+         assertEquals("7", display.getText());
 
         helper.clear();
 
@@ -356,5 +356,11 @@ public class CalculateHelperTest {
         helper.negate();
         helper.calculateResult();
         assertEquals("15", display.getText());
+    }
+
+    @Test
+    @DisplayName("Basic Trignometry Tests")
+    void testBasicTrigmetry() {
+
     }
 }

@@ -20,7 +20,7 @@ public class MasterControllerUITests {
         try {
             Platform.startup(() -> {});
         } catch (IllegalStateException e) {
-            // Toolkit already initialized, ignore
+
         }
     }
 
@@ -28,24 +28,28 @@ public class MasterControllerUITests {
     void setUp() {
         controller = new MasterController();
 
-        // Manually initialize the components that would normally be injected by FXML
         controller.calculatorPane = new Pane();
         controller.converterPane = new Pane();
         controller.scientificPane = new Pane();
         controller.rootPane = new Pane();
-        controller.display = new TextField();
+        controller.basicDisplay = new TextField();
+        controller.scientificDisplay = new TextField();
 
-        // Initialize the controller
+        controller.inputDisplay = new TextField();
+        controller.outputDisplay = new TextField();
+        controller.activeDisplay = null;
+        controller.fromUnit = new ComboBox<>();
+        controller.toUnit = new ComboBox<>();
+        controller.category = new ComboBox<>();
+
         controller.initialize();
     }
 
     @Test
     @DisplayName("Switch to Calculator: Calculator pane visible, others hidden")
     void testSwitchToCalculator() {
-        // First switch to another pane
         controller.switchToScientific();
 
-        // Then switch back to calculator
         controller.switchToCalculator();
 
         assertTrue(controller.calculatorPane.isVisible());
@@ -56,4 +60,60 @@ public class MasterControllerUITests {
         assertFalse(controller.scientificPane.isManaged());
     }
 
+    @Test
+    @DisplayName("Switch to Scientific: Scientific pane visible, others hidden")
+    void testSwitchToScientific() {
+        controller.switchToScientific();
+
+        assertTrue(controller.scientificPane.isVisible());
+        assertTrue(controller.scientificPane.isManaged());
+        assertFalse(controller.calculatorPane.isVisible());
+        assertFalse(controller.calculatorPane.isManaged());
+        assertFalse(controller.converterPane.isVisible());
+        assertFalse(controller.converterPane.isManaged());
+    }
+
+    @Test
+    @DisplayName("Switch to Converter: Converter pane visible, others hidden")
+    void testSwitchToConverter() {
+        controller.switchToConverter();
+
+        assertTrue(controller.converterPane.isVisible());
+        assertTrue(controller.converterPane.isManaged());
+        assertFalse(controller.calculatorPane.isVisible());
+        assertFalse(controller.calculatorPane.isManaged());
+        assertFalse(controller.scientificPane.isVisible());
+        assertFalse(controller.scientificPane.isManaged());
+    }
+
+    @Test
+    @DisplayName("Switch multiple times: Calculator -> Scientific -> Converter -> Calculator")
+    void testMultipleSwitches() {
+        // Start at calculator (default)
+        assertTrue(controller.calculatorPane.isVisible());
+
+        // Switch to scientific
+        controller.switchToScientific();
+        assertTrue(controller.scientificPane.isVisible());
+        assertFalse(controller.calculatorPane.isVisible());
+
+        // Switch to converter
+        controller.switchToConverter();
+        assertTrue(controller.converterPane.isVisible());
+        assertFalse(controller.scientificPane.isVisible());
+
+        // Switch back to calculator
+        controller.switchToCalculator();
+        assertTrue(controller.calculatorPane.isVisible());
+        assertFalse(controller.converterPane.isVisible());
+    }
+
+    @Test
+    @DisplayName("Initial state: Calculator pane should be visible by default")
+    void testInitialState() {
+        assertTrue(controller.calculatorPane.isVisible());
+        assertTrue(controller.calculatorPane.isManaged());
+        assertFalse(controller.converterPane.isVisible());
+        assertFalse(controller.scientificPane.isVisible());
+    }
 }

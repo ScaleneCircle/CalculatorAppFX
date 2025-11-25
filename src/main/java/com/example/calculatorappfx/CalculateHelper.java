@@ -18,7 +18,9 @@ public class CalculateHelper {
         this.display = display;
         display.setEditable(false); // user cannot type
         display.setAlignment(javafx.geometry.Pos.CENTER_LEFT);
-        display.setText("");
+        if (display.getText() == null || display.getText().isEmpty()) {
+            display.setText("0");
+        }
     }
 
     /**
@@ -40,6 +42,12 @@ public class CalculateHelper {
      * @param operation - the operation that was clicked
      */
     public void setOperation(String operation) {
+
+        if(isUnaryOperation(operation)) {
+            executeUnaryOperation(operation);
+            return;
+        };
+
         double currentNumber = Double.parseDouble(display.getText());
 
         if (!pendingOperation.isEmpty()) {
@@ -50,6 +58,41 @@ public class CalculateHelper {
         }
 
         pendingOperation = operation;
+        startNewNumber = true;
+    }
+
+    public boolean isUnaryOperation(String operation) {
+        return operation.equals("sin") || operation.equals("cos") || operation.equals("tan") ||
+                operation.equals("ln") || operation.equals("log") || operation.equals("1/x") ||
+                operation.equals("|x|") || operation.equals("√") || operation.equals("x²") || operation.equals("eˣ");
+    }
+
+    public void executeUnaryOperation(String operation) {
+        double currentValue = Double.parseDouble(display.getText());
+        double result = switch (operation) {
+            case "sin" -> Math.sin(currentValue);
+            case "cos" -> Math.cos(currentValue);
+            case "tan" -> Math.tan(currentValue);
+            case "ln" -> Math.log(currentValue);
+            case "log" -> Math.log10(currentValue);
+            case "1/x" -> 1 / currentValue;
+            case "|x|" -> Math.abs(currentValue);
+            case "√" -> Math.sqrt(currentValue);
+            case "x²" -> Math.pow(currentValue, 2);
+            case "eˣ" -> Math.pow(Math.E, currentValue);
+            default -> currentValue;
+        };
+        display.setText(formatResult(result));
+        startNewNumber = true;
+    }
+
+    public void insertConstant(String constant) {
+        double value = switch (constant) {
+            case "π" -> Math.PI;
+            case "e" -> Math.E;
+            default -> 0;
+        };
+        display.setText(formatResult(value));
         startNewNumber = true;
     }
 
@@ -100,6 +143,14 @@ public class CalculateHelper {
         }
     }
 
+    private String formatResult(double value) {
+        if (value % 1 == 0 && Math.abs(value) < 1e10) {
+            return String.valueOf((long) value);
+        } else {
+            return String.valueOf(value);
+        }
+    }
+
     /**
      * The main calculte function, it evaluates the current expression
      * @param a - the first number
@@ -114,17 +165,8 @@ public class CalculateHelper {
             case "x" -> a * b;
             case "/" -> a / b;
             case "%" -> a % b;
-            // Scientific functions (operate on a single number)
-            case "sin" -> Math.sin(b);
-            case "cos" -> Math.cos(b);
-            case "tan" -> Math.tan(b);
-            case "ln" -> Math.log(b);
-            case "log" -> Math.log10(b);
-            case "1/x" -> 1 / b;
-            case "|x|" -> Math.abs(b);
-            case "π" -> Math.PI;
-            case "e" -> Math.E;
-            default -> b; // fallback for unknown operations
+            case "xʸ" -> Math.pow(a, b);
+            default -> b;
         };
     }
 }

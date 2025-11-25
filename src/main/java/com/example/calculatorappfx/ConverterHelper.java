@@ -118,17 +118,17 @@ public class ConverterHelper {
 
         //Speed
         Map<String, Double> speed = new HashMap<>();
-        speed.put("Meters per second (m/s)", 0.44704);
-        speed.put("Meters per hour (m/h)", 1609.344);
-        speed.put("Kilometers per second (km/s)", .00044704);
-        speed.put("Kilometers per hour (km/h)", 1.609344);
-        speed.put("Inches per second (in/s)", 17.6);
-        speed.put("Inches per hour (in/h)", 63360.0);
-        speed.put("Feet per second (ft/s)", 1.466667);
-        speed.put("Feet per hour (ft/h)", 5280.0);
-        speed.put("Miles per second (mi/s)", .00277778);
+        speed.put("Meters per second (m/s)", 2.2369362921);
+        speed.put("Meters per hour (m/h)", .0006213712);
+        speed.put("Kilometers per second (km/s)", 2236.9362920544);
+        speed.put("Kilometers per hour (km/h)", .6213711922);
+        speed.put("Inches per second (in/s)", .0568181818);
+        speed.put("Inches per hour (in/h)", .0000157828);
+        speed.put("Feet per second (ft/s)", .6818181818);
+        speed.put("Feet per hour (ft/h)", .0001893939);
+        speed.put("Miles per second (mi/s)", 3600.0);
         speed.put("Miles per hour (mi/h)", 1.0);
-        speed.put("Knots (kn)", 0.8689762419);
+        speed.put("Knots (kn)", 1.150779448);
         conversionFactors.put("Speed", speed);
         baseUnits.put("Speed", "Miles");
 

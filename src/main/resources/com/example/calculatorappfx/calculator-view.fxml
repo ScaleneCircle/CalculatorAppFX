@@ -17,7 +17,7 @@
         <padding>
           <Insets bottom="20.0" left="5.0" right="20.0" top="20.0" />
         </padding>
-         <TextField fx:id="display" alignment="CENTER_RIGHT" editable="false">
+         <TextField fx:id="basicDisplay" alignment="CENTER_RIGHT" editable="false">
             <VBox.margin>
                <Insets right="-10.0" />
             </VBox.margin>
@@ -147,7 +147,7 @@
       </VBox>
       <VBox fx:id="scientificPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="283.0" prefWidth="500.0" spacing="10.0">
          <children>
-            <TextField>
+            <TextField fx:id="scientificDisplay" alignment="CENTER_RIGHT" editable="false">
                <VBox.margin>
                   <Insets top="15.0" />
                </VBox.margin>
@@ -176,55 +176,55 @@
                     <buttons>
                       <Button mnemonicParsing="false" styleClass="circle-button" text="⇆" />
                         <Button mnemonicParsing="false" styleClass="circle-button" text="Rad" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="√" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="C" />
+                        <Button mnemonicParsing="false" onAction="#handleOperator" styleClass="circle-button" text="√" />
+                        <Button mnemonicParsing="false" onAction="#handleClear" styleClass="circle-button" text="C" />
                         <Button mnemonicParsing="false" styleClass="circle-button" text="()" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="\%" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="./." />
+                        <Button mnemonicParsing="false" onAction="#handleOperator" styleClass="circle-button" text="\%" />
+                        <Button mnemonicParsing="false" onAction="#handleOperator" styleClass="circle-button" text="/" />
                     </buttons>
                   </ButtonBar>
                   <ButtonBar prefHeight="40.0" prefWidth="200.0" stylesheets="@../../../style.css" GridPane.rowIndex="1">
                     <buttons>
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="sin" />
-                      <Button mnemonicParsing="false" styleClass="circle-button" text="cos" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="tan" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="7" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="8" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="9" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="x" />
+                        <Button mnemonicParsing="false" onAction="#handleOperator" styleClass="circle-button" text="sin" />
+                      <Button mnemonicParsing="false" onAction="#handleOperator" styleClass="circle-button" text="cos" />
+                        <Button mnemonicParsing="false" onAction="#handleOperator" styleClass="circle-button" text="tan" />
+                        <Button mnemonicParsing="false" onAction="#handleNumber" styleClass="circle-button" text="7" />
+                        <Button mnemonicParsing="false" onAction="#handleNumber" styleClass="circle-button" text="8" />
+                        <Button mnemonicParsing="false" onAction="#handleNumber" styleClass="circle-button" text="9" />
+                        <Button mnemonicParsing="false" onAction="#handleOperator" styleClass="circle-button" text="x" />
                     </buttons>
                   </ButtonBar>
                   <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.rowIndex="2">
                     <buttons>
-                      <Button mnemonicParsing="false" styleClass="circle-button" text="ln" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="log" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="1/x" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="4" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="5" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="6" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="-" />
+                      <Button mnemonicParsing="false" onAction="#handleOperator" styleClass="circle-button" text="ln" />
+                        <Button mnemonicParsing="false" onAction="#handleOperator" styleClass="circle-button" text="log" />
+                        <Button mnemonicParsing="false" onAction="#handleOperator" styleClass="circle-button" text="1/x" />
+                        <Button mnemonicParsing="false" onAction="#handleNumber" styleClass="circle-button" text="4" />
+                        <Button mnemonicParsing="false" onAction="#handleNumber" styleClass="circle-button" text="5" />
+                        <Button mnemonicParsing="false" onAction="#handleNumber" styleClass="circle-button" text="6" />
+                        <Button mnemonicParsing="false" onAction="#handleOperator" styleClass="circle-button" text="-" />
                     </buttons>
                   </ButtonBar>
                   <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.rowIndex="3">
                     <buttons>
-                      <Button mnemonicParsing="false" styleClass="circle-button" text="x²" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="xʸ" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="eˣ" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="1" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="2" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="3" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="+" />
+                      <Button mnemonicParsing="false" onAction="#handleOperator" styleClass="circle-button" text="x²" />
+                        <Button mnemonicParsing="false" onAction="#handleOperator" styleClass="circle-button" text="xʸ" />
+                        <Button mnemonicParsing="false" onAction="#handleOperator" styleClass="circle-button" text="eˣ" />
+                        <Button mnemonicParsing="false" onAction="#handleNumber" styleClass="circle-button" text="1" />
+                        <Button mnemonicParsing="false" onAction="#handleNumber" styleClass="circle-button" text="2" />
+                        <Button mnemonicParsing="false" onAction="#handleNumber" styleClass="circle-button" text="3" />
+                        <Button mnemonicParsing="false" onAction="#handleOperator" styleClass="circle-button" text="+" />
                     </buttons>
                   </ButtonBar>
                   <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.rowIndex="4">
                     <buttons>
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="|x|" />
-                      <Button mnemonicParsing="false" styleClass="circle-button" text="π" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="e" />
+                        <Button mnemonicParsing="false" onAction="#handleOperator" styleClass="circle-button" text="|x|" />
+                      <Button mnemonicParsing="false" onAction="#handleConstant" styleClass="circle-button" text="π" />
+                        <Button mnemonicParsing="false" onAction="#handleConstant" styleClass="circle-button" text="e" />
                         <Button mnemonicParsing="false" onAction="#negate" styleClass="circle-button" text="+/-" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="0" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="." />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="=" />
+                        <Button mnemonicParsing="false" onAction="#handleNumber" styleClass="circle-button" text="0" />
+                        <Button mnemonicParsing="false" onAction="#handleNumber" styleClass="circle-button" text="." />
+                        <Button mnemonicParsing="false" onAction="#handleEquals" styleClass="circle-button" text="=" />
                     </buttons>
                   </ButtonBar>
                </children>

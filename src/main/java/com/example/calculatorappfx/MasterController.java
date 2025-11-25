@@ -24,28 +24,34 @@ public class MasterController {
     public Pane rootPane;
 
     @FXML
-    public TextField display;
-    @FXML
-    private TextField inputDisplay;
+    public TextField basicDisplay;
 
     @FXML
-    private TextField outputDisplay;
+    public TextField scientificDisplay;
 
     @FXML
-    private TextField activeDisplay;
+    public TextField inputDisplay;
 
     @FXML
-    private ComboBox<String> fromUnit;
+    public TextField outputDisplay;
 
     @FXML
-    private ComboBox<String> toUnit;
+    public TextField activeDisplay;
 
     @FXML
-    private ComboBox<String> category;
+    public ComboBox<String> fromUnit;
 
-    private CalculateHelper helper;
+    @FXML
+    public ComboBox<String> toUnit;
 
-    private ConverterHelper converterHelper;
+    @FXML
+    public ComboBox<String> category;
+
+    public CalculateHelper basicHelper;
+
+    public CalculateHelper scientificHelper;
+
+    public ConverterHelper converterHelper;
 
 
     /**
@@ -53,7 +59,9 @@ public class MasterController {
      */
     @FXML
     public void initialize() {
-        helper = new CalculateHelper(display);
+        basicHelper = new CalculateHelper(basicDisplay);
+
+        scientificHelper = new CalculateHelper(scientificDisplay);
 
         converterHelper = new ConverterHelper(
                 inputDisplay,
@@ -80,6 +88,14 @@ public class MasterController {
         activeDisplay = inputDisplay;
 
         switchToCalculator();
+    }
+
+    private CalculateHelper getCurrentHelper(){
+        if (scientificPane.isVisible()) {
+            return scientificHelper;
+        } else {
+            return basicHelper;
+        }
     }
 
     /**
@@ -134,7 +150,7 @@ public class MasterController {
     @FXML
     private void handleNumber(ActionEvent event) {
         Button btn = (Button) event.getSource();
-        helper.append(btn.getText());
+        getCurrentHelper().append(btn.getText());
     }
 
     @FXML
@@ -147,7 +163,7 @@ public class MasterController {
 
     @FXML
     private void negate(ActionEvent event) {
-        helper.negate();
+        getCurrentHelper().negate();
     }
 
     @FXML
@@ -177,7 +193,13 @@ public class MasterController {
     @FXML
     private void handleOperator(ActionEvent event) {
         Button btn = (Button) event.getSource();
-        helper.setOperation(btn.getText());
+        getCurrentHelper().setOperation(btn.getText());
+    }
+
+    @FXML
+    private void handleConstant(ActionEvent event) {
+        Button btn = (Button) event.getSource();
+        getCurrentHelper().insertConstant(btn.getText());
     }
 
     /**
@@ -186,7 +208,7 @@ public class MasterController {
      */
     @FXML
     private void handleEquals(ActionEvent event) {
-        helper.calculateResult();
+        getCurrentHelper().calculateResult();
     }
 
     /**
@@ -198,7 +220,7 @@ public class MasterController {
         if(converterPane.isVisible()){
             converterHelper.clear();
         }else {
-            helper.clear();
+            getCurrentHelper().clear();
         }
     }
 
