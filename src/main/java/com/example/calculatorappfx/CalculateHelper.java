@@ -37,6 +37,28 @@ public class CalculateHelper {
         }
     }
 
+    public void backspace() {
+        String curr = display.getText();
+        if( curr.isEmpty() || curr.equals("0")) {
+            return;
+        }
+
+        if(curr.length() == 1 || curr.equals("-")) {
+            display.setText("0");
+            startNewNumber = true;
+            return;
+        }
+
+        String back = curr.substring(0, curr.length() - 1);
+
+        if(back.equals("-")){
+            display.setText("0");
+            startNewNumber = true;
+        } else {
+            display.setText(back);
+        }
+    }
+
     /**
      * This functions sets the current operation
      * @param operation - the operation that was clicked

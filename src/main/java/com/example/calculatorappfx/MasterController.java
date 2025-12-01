@@ -178,6 +178,11 @@ public class MasterController {
     }
 
     @FXML
+    private void back(ActionEvent event) {
+        getCurrentHelper().backspace();
+    }
+
+    @FXML
     private void backConvert(ActionEvent event) {
         Button btn = (Button) event.getSource();
         String curr = activeDisplay.getText();

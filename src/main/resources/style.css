@@ -12,6 +12,10 @@
     -fx-alignment: center;
 }
 
+.circle-button:hover {
+    -fx-background-color: #2A3D2D;
+}
+
 .circle-button:pressed {
     -fx-background-color: gray;
 }
@@ -29,4 +33,64 @@
     -fx-max-height: Infinity;
     -fx-text-fill: black;
     -fx-alignment: center;
+}
+
+.menu-button:hover {
+    -fx-background-color: #2A3D2D;
+}
+
+.clear-button {
+    -fx-background-radius: 50%;
+    -fx-min-width: 80;
+    -fx-min-height: 0;
+    -fx-pref-width: 80;
+    -fx-pref-height: 60;
+    -fx-max-width: Infinity;
+    -fx-max-height: Infinity;
+    -fx-background-color: gray;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-alignment: center;
+}
+
+.clear-button-two {
+    -fx-background-radius: 50%;
+    -fx-min-width: 130;
+    -fx-min-height: 0;
+    -fx-pref-width: 80;
+    -fx-pref-height: 60;
+    -fx-max-width: Infinity;
+    -fx-max-height: Infinity;
+    -fx-background-color: gray;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-alignment: center;
+}
+
+.combo-box {
+    -fx-background-color:   #2e2828;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color:  #2e2828;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color:  #2e2828;
+}
+
+.combo-box-popup .list-view .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color:  #2e2828;
+}
+
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: #596959;
+    -fx-text-fill: white;
+}
+
+.combo-box-popup .list-view .list-cell:selected {
+    -fx-background-color: white;
+    -fx-text-fill:  #2e2828;
 }
