@@ -47,6 +47,35 @@ public class MasterController {
     @FXML
     public ComboBox<String> category;
 
+    @FXML
+    private Button sinButton;
+    @FXML
+    private Button cosButton;
+    @FXML
+    private Button tanButton;
+    @FXML
+    private Button lnButton;
+    @FXML
+    private Button logButton;
+    @FXML
+    private Button reciprocalButton;
+    @FXML
+    private Button expButton;
+    @FXML
+    private Button squareButton;
+    @FXML
+    private Button powerButton;
+    @FXML
+    private Button absButton;
+    @FXML
+    private Button piButton;
+    @FXML
+    private Button eButton;
+    @FXML
+    private Button sqrtButton;
+
+    private boolean showingAltFunctions = false;
+
     public CalculateHelper basicHelper;
 
     public CalculateHelper scientificHelper;
@@ -153,6 +182,11 @@ public class MasterController {
         getCurrentHelper().append(btn.getText());
     }
 
+    /**
+     * This function handles any unit being converted and passes in the display value to be converted and displayed
+     * on the opposite display
+     * @param event - A number being entered in a converter display
+     */
     @FXML
     private void handleNumberConvert(ActionEvent event) {
         Button btn = (Button) event.getSource();
@@ -161,11 +195,19 @@ public class MasterController {
         activeDisplay.setText(curr + btn.getText());
     }
 
+    /**
+     * This function negates the current number
+     * @param event - Negate button being clicked
+     */
     @FXML
     private void negate(ActionEvent event) {
         getCurrentHelper().negate();
     }
 
+    /**
+     * This function is identical to negate except it is for the Unit Converter, so it negates both values (If applicable)
+     * @param event - Negate button being clicked
+     */
     @FXML
     private void negateConvert(ActionEvent event) {
         Button btn = (Button) event.getSource();
@@ -177,11 +219,19 @@ public class MasterController {
         }
     }
 
+    /**
+     * This function does a backspace on the current number being displayed
+     * @param event - the backspace button being clicked
+     */
     @FXML
     private void back(ActionEvent event) {
         getCurrentHelper().backspace();
     }
 
+    /**
+     * This function is identical to backspace except for the Unit Converter so it backspaces from both displays
+     * @param event - Backspace being clicked
+     */
     @FXML
     private void backConvert(ActionEvent event) {
         Button btn = (Button) event.getSource();
@@ -201,6 +251,10 @@ public class MasterController {
         getCurrentHelper().setOperation(btn.getText());
     }
 
+    /**
+     * This function handles one of the constant buttons being clicked and adds that constant to the display
+     * @param event - one of the constant buttons being clicked
+     */
     @FXML
     private void handleConstant(ActionEvent event) {
         Button btn = (Button) event.getSource();
@@ -270,6 +324,45 @@ public class MasterController {
             converterHelper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
         } else {
             converterHelper.convert(outputDisplay, inputDisplay, toUnit.getValue(), fromUnit.getValue());
+        }
+    }
+
+    /**
+     * This function handles the double arrow button in scientific calculator that toggles to display more options
+     * @param event - the toggle button being clicked
+     */
+    @FXML
+    private void handleToggle(ActionEvent event) {
+        showingAltFunctions = !showingAltFunctions;
+
+        if(showingAltFunctions) {
+            sinButton.setText("sin⁻¹");
+            cosButton.setText("cos⁻¹");
+            tanButton.setText("tan⁻¹");
+            lnButton.setText("sinh");
+            logButton.setText("cosh");
+            reciprocalButton.setText("tanh");
+            squareButton.setText("sinh⁻¹");
+            powerButton.setText("cosh⁻¹");
+            expButton.setText("tanh⁻¹");
+            absButton.setText("2ˣ");
+            piButton.setText("x³");
+            eButton.setText("x!");
+            sqrtButton.setText("³√");
+        } else {
+            sinButton.setText("sin");
+            cosButton.setText("cos");
+            tanButton.setText("tan");
+            lnButton.setText("ln");
+            logButton.setText("log");
+            reciprocalButton.setText("1/x");
+            squareButton.setText("x²");
+            powerButton.setText("xʸ");
+            expButton.setText("eˣ");
+            absButton.setText("|x|");
+            piButton.setText("π");
+            eButton.setText("e");
+            sqrtButton.setText("√");
         }
     }
 }

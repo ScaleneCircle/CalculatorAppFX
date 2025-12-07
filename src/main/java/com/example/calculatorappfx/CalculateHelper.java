@@ -83,9 +83,18 @@ public class CalculateHelper {
         startNewNumber = true;
     }
 
+    /**
+     * This function checks if the current operation is a unary operation
+     * @param operation - the operation being checked
+     * @return - true if unary, false if not
+     */
     public boolean isUnaryOperation(String operation) {
         return operation.equals("sin") || operation.equals("cos") || operation.equals("tan") ||
+                operation.equals("sin⁻¹") || operation.equals("cos⁻¹") || operation.equals("tan⁻¹") ||
+                operation.equals("sinh") || operation.equals("cosh") || operation.equals("tanh") ||
+                operation.equals("sinh⁻¹") || operation.equals("cosh⁻¹") || operation.equals("tanh⁻¹") ||
                 operation.equals("ln") || operation.equals("log") || operation.equals("1/x") ||
+                operation.equals("2ˣ") || operation.equals("x³") || operation.equals("x!") || operation.equals("³√") ||
                 operation.equals("|x|") || operation.equals("√") || operation.equals("x²") || operation.equals("eˣ");
     }
 
@@ -95,17 +104,43 @@ public class CalculateHelper {
             case "sin" -> Math.sin(currentValue);
             case "cos" -> Math.cos(currentValue);
             case "tan" -> Math.tan(currentValue);
+            case "sin⁻¹" -> Math.asin(currentValue);
+            case "cos⁻¹" -> Math.acos(currentValue);
+            case "tan⁻¹" -> Math.atan(currentValue);
+            case "sinh" -> Math.sinh(currentValue);
+            case "cosh" -> Math.cosh(currentValue);
+            case "tanh" -> Math.tanh(currentValue);
+            case "sinh⁻¹" -> Math.log(currentValue + Math.sqrt(currentValue * currentValue + 1));
+            case "cosh⁻¹" -> Math.log(currentValue + Math.sqrt(currentValue * currentValue - 1));
+            case "tanh⁻¹" -> 0.5 * Math.log((1 + currentValue) / (1 - currentValue));
             case "ln" -> Math.log(currentValue);
             case "log" -> Math.log10(currentValue);
             case "1/x" -> 1 / currentValue;
             case "|x|" -> Math.abs(currentValue);
+            case "2ˣ" -> Math.pow(2, currentValue);
             case "√" -> Math.sqrt(currentValue);
+            case "³√" -> Math.cbrt(currentValue);
             case "x²" -> Math.pow(currentValue, 2);
+            case "x³" -> Math.pow(currentValue, 3);
             case "eˣ" -> Math.pow(Math.E, currentValue);
+            case "x!" -> factorial(currentValue);
             default -> currentValue;
         };
         display.setText(formatResult(result));
         startNewNumber = true;
+    }
+
+    private double factorial(double x) {
+        if(x < 0) return Double.NaN;
+        if(x == 0 || x == 1) return 1;
+        if(x != Math.floor(x)) return Double.NaN;
+        if(x > 170) return Double.POSITIVE_INFINITY;
+
+        double factorial = 1;
+        for(int i = 2; i <= x; i++) {
+            factorial *= i;
+        }
+        return factorial;
     }
 
     public void insertConstant(String constant) {
