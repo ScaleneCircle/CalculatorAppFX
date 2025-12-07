@@ -10,7 +10,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+/**
+ * This class is responsible for managing the UI. It switches visible panes and buttons as well as manages button press
+ * actions and displays
+ */
 public class MasterController {
+    //UI Panes for the calculators
     @FXML
     public Pane calculatorPane;
 
@@ -23,6 +28,7 @@ public class MasterController {
     @FXML
     public Pane rootPane;
 
+    // Displays for the calculators
     @FXML
     public TextField basicDisplay;
 
@@ -38,6 +44,7 @@ public class MasterController {
     @FXML
     public TextField activeDisplay;
 
+    //Unit converter specific settings
     @FXML
     public ComboBox<String> fromUnit;
 
@@ -47,6 +54,7 @@ public class MasterController {
     @FXML
     public ComboBox<String> category;
 
+    // Scientific Calculator Buttons switched by toggle
     @FXML
     private Button sinButton;
     @FXML
@@ -76,6 +84,7 @@ public class MasterController {
 
     private boolean showingAltFunctions = false;
 
+    //Helpers that manage the buttons/ui for each calculator
     public CalculateHelper basicHelper;
 
     public CalculateHelper scientificHelper;

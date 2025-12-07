@@ -8,6 +8,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Main method of the program, this sets the scenes and starts the UI
+ */
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {

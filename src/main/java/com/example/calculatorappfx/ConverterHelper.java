@@ -6,6 +6,10 @@ import javafx.scene.control.TextField;
 
 import java.util.*;
 
+/**
+ * Helper class for the Unit Converter. This class manages all the behind the scenes calculations/conversions and
+ * pushes them forwards to the MasterController to be displayed
+ */
 public class ConverterHelper {
 
     private TextField inputDisplay;
@@ -205,8 +209,6 @@ public class ConverterHelper {
             String cat = category.getValue();
 
             double result = performConversion(value, from, to, cat);
-
-            //TODO look at this + error stuff
             if (result % 1 == 0 && Math.abs(result) < 1e10) {
                 target.setText(String.valueOf((long) result));
             } else {
@@ -260,6 +262,9 @@ public class ConverterHelper {
         };
     }
 
+    /**
+     * Clears the input display and sets visible text on both to 0
+     */
     public void clear(){
         inputDisplay.setText("0");
         outputDisplay.setText("0");

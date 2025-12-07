@@ -15,6 +15,9 @@ public class MasterControllerUITests {
 
     private MasterController controller;
 
+    /**
+     * Starts the UI before testing so things can be properly tested
+     */
     @BeforeAll
     static void initToolkit() {
         try {
@@ -24,6 +27,9 @@ public class MasterControllerUITests {
         }
     }
 
+    /**
+     * Necessary setup for other tests to function properly
+     */
     @BeforeEach
     void setUp() {
         controller = new MasterController();
@@ -45,6 +51,9 @@ public class MasterControllerUITests {
         controller.initialize();
     }
 
+    /**
+     * This test checks whether switching from Scientific Calculator being visible to Calculator correctly switches
+     */
     @Test
     @DisplayName("Switch to Calculator: Calculator pane visible, others hidden")
     void testSwitchToCalculator() {
@@ -60,6 +69,9 @@ public class MasterControllerUITests {
         assertFalse(controller.scientificPane.isManaged());
     }
 
+    /**
+     * This test checks whether the switch from Calculator Pane to Scientific Calculator Pane correctly switches
+     */
     @Test
     @DisplayName("Switch to Scientific: Scientific pane visible, others hidden")
     void testSwitchToScientific() {
@@ -73,6 +85,9 @@ public class MasterControllerUITests {
         assertFalse(controller.converterPane.isManaged());
     }
 
+    /**
+     * This test checks whether the switch from Calculator Pane to Unit Converter Pane correctly switches
+     */
     @Test
     @DisplayName("Switch to Converter: Converter pane visible, others hidden")
     void testSwitchToConverter() {
@@ -86,6 +101,9 @@ public class MasterControllerUITests {
         assertFalse(controller.scientificPane.isManaged());
     }
 
+    /**
+     * This test checks whether the correct Pane continues to be displayed after multiple switches
+     */
     @Test
     @DisplayName("Switch multiple times: Calculator -> Scientific -> Converter -> Calculator")
     void testMultipleSwitches() {
@@ -108,6 +126,9 @@ public class MasterControllerUITests {
         assertFalse(controller.converterPane.isVisible());
     }
 
+    /**
+     * This test checks whether the default state of the calculator displays the correct Pane
+     */
     @Test
     @DisplayName("Initial state: Calculator pane should be visible by default")
     void testInitialState() {

@@ -2,6 +2,10 @@ package com.example.calculatorappfx;
 
 import javafx.scene.control.TextField;
 
+/**
+ * Helper class for Basic and Scientific Calculator. It handles all the calculations and passes the
+ * results forward to the Master controller to be displayed
+ */
 public class CalculateHelper {
 
     private TextField display;
@@ -37,6 +41,10 @@ public class CalculateHelper {
         }
     }
 
+    /**
+     * This function handles the backspace button, deleting any user input one space at a time.
+     * If the input would be fully cleared it sets the text to 0
+     */
     public void backspace() {
         String curr = display.getText();
         if( curr.isEmpty() || curr.equals("0")) {
@@ -98,6 +106,11 @@ public class CalculateHelper {
                 operation.equals("|x|") || operation.equals("√") || operation.equals("x²") || operation.equals("eˣ");
     }
 
+    /**
+     * This function executes Unary operations (those which only require one number to have been entered) and sets
+     * the display to the result
+     * @param operation - the operation to execute
+     */
     public void executeUnaryOperation(String operation) {
         double currentValue = Double.parseDouble(display.getText());
         double result = switch (operation) {
@@ -130,6 +143,11 @@ public class CalculateHelper {
         startNewNumber = true;
     }
 
+    /**
+     * Helper function for Unary Operation to handle factorials
+     * @param x - the number which the factorial is being taken of
+     * @return - the result of the x!
+     */
     private double factorial(double x) {
         if(x < 0) return Double.NaN;
         if(x == 0 || x == 1) return 1;
@@ -143,6 +161,10 @@ public class CalculateHelper {
         return factorial;
     }
 
+    /**
+     * Handles constants being added to the display
+     * @param constant - the  constant that was pressed
+     */
     public void insertConstant(String constant) {
         double value = switch (constant) {
             case "π" -> Math.PI;
@@ -180,6 +202,11 @@ public class CalculateHelper {
         startNewNumber = true;
     }
 
+    /**
+     * This functions handles the negate button. If a number is currently positive it makes it negative
+     * and if its currently negative it makes it positive. It updates the display by adding/removing the '-' character
+     * based on the result
+     */
     public void negate() {
         String current = display.getText().trim();
 
@@ -200,6 +227,11 @@ public class CalculateHelper {
         }
     }
 
+    /**
+     * Formats the result so it is not in float format if only ints were entered
+     * @param value - value to format
+     * @return - formatted result to display
+     */
     private String formatResult(double value) {
         if (value % 1 == 0 && Math.abs(value) < 1e10) {
             return String.valueOf((long) value);

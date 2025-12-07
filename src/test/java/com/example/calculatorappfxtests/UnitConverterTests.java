@@ -43,29 +43,443 @@ public class UnitConverterTests {
         helper = new ConverterHelper(inputDisplay, outputDisplay, fromUnit, toUnit, category);
     }
 
-    @Test
-    @DisplayName("Area tests")
-    void testArea() {
-        //Test One: Acre to sq ft
-        category.setValue("Area");
-        helper.updateUnitCombos();
-        fromUnit.setValue("Acre(ac)");
-        toUnit.setValue("Square Feet");
-        inputDisplay.setText("1");
-        helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
-        assertEquals("43560", outputDisplay.getText());
+    @Nested
+    @DisplayName("Area Tests")
+    class AreaTests {
+        @Test
+        @DisplayName("Acres tests")
+        void AcreTests() {
+            //Acres to Ares
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Acre(ac)");
+            toUnit.setValue("Ares(a)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("40.468564", outputDisplay.getText());
 
-        helper.clear();
+            helper.clear();
+            //Acres to Hectares
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Acre(ac)");
+            toUnit.setValue("Hectares(ha)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.404686", outputDisplay.getText());
 
-        //Test Two: Square Ft to Acre
-        category.setValue("Area");
-        helper.updateUnitCombos();
-        fromUnit.setValue("Square Feet");
-        toUnit.setValue("Acre(ac)");
-        inputDisplay.setText("10000");
-        helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
-        double result = Double.parseDouble(outputDisplay.getText());
-        assertEquals(0.2296, result, 0.001);
+            helper.clear();
+            //Acres to Square Inch
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Acre(ac)");
+            toUnit.setValue("Square Inches");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("6272640.401449", outputDisplay.getText());
+
+            helper.clear();
+            //Acres to Square Feet
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Acre(ac)");
+            toUnit.setValue("Square Feet");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("43560", outputDisplay.getText());
+
+            helper.clear();
+            //Acres to Square Centimeter
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Acre(ac)");
+            toUnit.setValue("Square Centimeters");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("40468565.790684", outputDisplay.getText());
+
+            helper.clear();
+            //Acres to Square Meter
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Acre(ac)");
+            toUnit.setValue("Square Meters");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("4046.856422", outputDisplay.getText());
+        }
+        @Test
+        @DisplayName("Ares tests")
+        void AresTests() {
+            //Ares to Acres
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Ares(a)");
+            toUnit.setValue("Acre(ac)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.024711", outputDisplay.getText());
+
+            helper.clear();
+            //Ares to Hectares
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Ares(a)");
+            toUnit.setValue("Hectares(ha)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.01", outputDisplay.getText());
+
+            helper.clear();
+            //Ares to Square Inch
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Ares(a)");
+            toUnit.setValue("Square Inches");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("155000.319921", outputDisplay.getText());
+
+            helper.clear();
+            //Ares to Square Feet
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Ares(a)");
+            toUnit.setValue("Square Feet");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1076.391042", outputDisplay.getText());
+
+            helper.clear();
+            //Ares to Square Centimeter
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Ares(a)");
+            toUnit.setValue("Square Centimeters");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1000000.038714", outputDisplay.getText());
+
+            helper.clear();
+            //Ares to Square Meter
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Ares(a)");
+            toUnit.setValue("Square Meters");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("100", outputDisplay.getText());
+        }
+        @Test
+        @DisplayName("Hectare tests")
+        void HectareTests() {
+            //Hectares to Acres
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Hectares(ha)");
+            toUnit.setValue("Acre(ac)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("2.471054", outputDisplay.getText());
+
+            helper.clear();
+            //Hectares to Ares
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Hectares(ha)");
+            toUnit.setValue("Ares(a)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("100", outputDisplay.getText());
+
+            helper.clear();
+            //Hectares to Square Inches
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Hectares(ha)");
+            toUnit.setValue("Square Inches");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("15500031.992064", outputDisplay.getText());
+
+            helper.clear();
+            //Hectares to Square Feet
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Hectares(ha)");
+            toUnit.setValue("Square Feet");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("107639.104167", outputDisplay.getText());
+
+            helper.clear();
+            //Hectares to Square Centimeters
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Hectares(ha)");
+            toUnit.setValue("Square Centimeters");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("100000003.871363", outputDisplay.getText());
+
+            helper.clear();
+            //Hectares to Square Meters
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Hectares(ha)");
+            toUnit.setValue("Square Meters");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("10000", outputDisplay.getText());
+        }
+        @Test
+        @DisplayName("Square Inch tests")
+        void SquareInchTests() {
+            //Square Inch to Acres
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Inches");
+            toUnit.setValue("Acre(ac)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0", outputDisplay.getText());
+
+            helper.clear();
+            //Square Inch to Ares
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Inches");
+            toUnit.setValue("Ares(a)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000006", outputDisplay.getText());
+
+            helper.clear();
+            //Square Inch to Hectares
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Inches");
+            toUnit.setValue("Hectares(ha)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0", outputDisplay.getText());
+
+            helper.clear();
+            //Square Inch to Square Feet
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Inches");
+            toUnit.setValue("Square Feet");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.006944", outputDisplay.getText());
+
+            helper.clear();
+            //Square Inch to Square Centimeters
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Inches");
+            toUnit.setValue("Square Centimeters");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("6.4516", outputDisplay.getText());
+
+            helper.clear();
+            //Square Inch to Square Meters
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Inches");
+            toUnit.setValue("Square Meters");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000645", outputDisplay.getText());
+        }
+        @Test
+        @DisplayName("Square Foot tests")
+        void SquareFootTests() {
+            //Square feet to Acres
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Feet");
+            toUnit.setValue("Acre(ac)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000023", outputDisplay.getText());
+
+            helper.clear();
+            //Square feet to Ares
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Feet");
+            toUnit.setValue("Ares(a)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000929", outputDisplay.getText());
+
+            helper.clear();
+            //Square feet to Hectares
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Feet");
+            toUnit.setValue("Hectares(ha)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000009", outputDisplay.getText());
+
+            helper.clear();
+            //Square feet to Square Inches
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Feet");
+            toUnit.setValue("Square Inches");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("144.000009", outputDisplay.getText());
+
+            helper.clear();
+            //Square feet to Square Centimeters
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Feet");
+            toUnit.setValue("Square Centimeters");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("929.030436", outputDisplay.getText());
+
+            helper.clear();
+            //Square feet to Square Meters
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Feet");
+            toUnit.setValue("Square Meters");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.092903", outputDisplay.getText());
+        }
+        @Test
+        @DisplayName("Square Centimeter tests")
+        void SquareCentimeterTests() {
+            //Square Centimeters to Acres
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Centimeters");
+            toUnit.setValue("Acre(ac)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0", outputDisplay.getText());
+
+            helper.clear();
+            //Square Centimeters to Ares
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Centimeters");
+            toUnit.setValue("Ares(a)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000001", outputDisplay.getText());
+
+            helper.clear();
+            //Square Centimeters to Hectares
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Centimeters");
+            toUnit.setValue("Hectares(ha)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0", outputDisplay.getText());
+
+            helper.clear();
+            //Square Centimeters to Square Inches
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Centimeters");
+            toUnit.setValue("Square Inches");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.155", outputDisplay.getText());
+
+            helper.clear();
+            //Square Centimeters to Square Feet
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Centimeters");
+            toUnit.setValue("Square Feet");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.001076", outputDisplay.getText());
+
+            helper.clear();
+            //Square Centimeters to Square Meters
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Centimeters");
+            toUnit.setValue("Square Meters");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.0001", outputDisplay.getText());
+        }
+        @Test
+        @DisplayName("Square Meter tests")
+        void SquareMeterTests() {
+            //Square Meters to Acres
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Meters");
+            toUnit.setValue("Acre(ac)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000247", outputDisplay.getText());
+
+            helper.clear();
+            //Square Meters to Ares
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Meters");
+            toUnit.setValue("Ares(a)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.01", outputDisplay.getText());
+
+            helper.clear();
+            //Square Meters to Hectares
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Meters");
+            toUnit.setValue("Hectares(ha)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.0001", outputDisplay.getText());
+
+            helper.clear();
+            //Square Meters to Square Inches
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Meters");
+            toUnit.setValue("Square Inches");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1550.003199", outputDisplay.getText());
+
+            helper.clear();
+            //Square Meters to Square Feet
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Meters");
+            toUnit.setValue("Square Feet");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("10.76391", outputDisplay.getText());
+
+            helper.clear();
+            //Square Meters to Square Centimeters
+            category.setValue("Area");
+            helper.updateUnitCombos();
+            fromUnit.setValue("Square Meters");
+            toUnit.setValue("Square Centimeters");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("10000.000387", outputDisplay.getText());
+        }
     }
 
     @Test
