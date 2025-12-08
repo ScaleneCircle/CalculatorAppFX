@@ -108,8 +108,8 @@
                               <String fx:value="clear-button-two" />
                               <String fx:value="circle-button" />
                            </styleClass></Button>
-                        <Button fx:id="toggleButton" mnemonicParsing="false" onAction="#handleToggle" styleClass="circle-button" text="⇄" />
-                        <Button mnemonicParsing="false" styleClass="circle-button" text="Rad" />
+                        <Button mnemonicParsing="false" onAction="#handleToggle" styleClass="circle-button" text="⇄" />
+                        <Button fx:id="radianOrDegreeButton" mnemonicParsing="false" onAction="#radianOrDegrees" styleClass="circle-button" text="Radians" />
                         <Button fx:id="sqrtButton" mnemonicParsing="false" onAction="#handleOperator" styleClass="circle-button" text="√" />
                         <Button mnemonicParsing="false" onAction="#handleOperator" style="-fx-text-fill: #106117;" styleClass="circle-button" text="\%" />
                         <Button mnemonicParsing="false" onAction="#handleOperator" style="-fx-text-fill: #106117;" styleClass="circle-button" text="/" />

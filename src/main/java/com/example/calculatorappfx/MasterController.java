@@ -10,6 +10,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import java.util.Objects;
+
 /**
  * This class is responsible for managing the UI. It switches visible panes and buttons as well as manages button press
  * actions and displays
@@ -81,6 +83,8 @@ public class MasterController {
     private Button eButton;
     @FXML
     private Button sqrtButton;
+    @FXML
+    private Button radianOrDegreeButton;
 
     private boolean showingAltFunctions = false;
 
@@ -333,6 +337,21 @@ public class MasterController {
             converterHelper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
         } else {
             converterHelper.convert(outputDisplay, inputDisplay, toUnit.getValue(), fromUnit.getValue());
+        }
+    }
+
+    /**
+     * This function handles the toggle between radians and degrees for trigonometric functions
+     * @param event - when the radian/degree button is clicked
+     */
+    @FXML
+    private void radianOrDegrees(ActionEvent event) {
+        if(Objects.equals(radianOrDegreeButton.getText(), "Radians")){
+            radianOrDegreeButton.setText("Degree");
+            scientificHelper.isRadians = false;
+        } else {
+            scientificHelper.isRadians = true;
+            radianOrDegreeButton.setText("Radians");
         }
     }
 

@@ -13,6 +13,7 @@ public class CalculateHelper {
     private double firstOperand = 0;
     private String pendingOperation = "";
     private boolean startNewNumber = true;
+    public boolean isRadians = false;
 
     /**
      * The default display setting
@@ -113,13 +114,14 @@ public class CalculateHelper {
      */
     public void executeUnaryOperation(String operation) {
         double currentValue = Double.parseDouble(display.getText());
+        double angle = isRadians ? currentValue : Math.toRadians(currentValue);
         double result = switch (operation) {
-            case "sin" -> Math.sin(currentValue);
-            case "cos" -> Math.cos(currentValue);
-            case "tan" -> Math.tan(currentValue);
-            case "sin⁻¹" -> Math.asin(currentValue);
-            case "cos⁻¹" -> Math.acos(currentValue);
-            case "tan⁻¹" -> Math.atan(currentValue);
+            case "sin" -> Math.sin(angle);
+            case "cos" -> Math.cos(angle);
+            case "tan" -> Math.tan(angle);
+            case "sin⁻¹" -> isRadians ? Math.asin(currentValue) : Math.toDegrees(Math.asin(currentValue));
+            case "cos⁻¹" -> isRadians ? Math.acos(currentValue) : Math.toDegrees(Math.acos(currentValue));
+            case "tan⁻¹" -> isRadians ? Math.atan(currentValue) : Math.toDegrees(Math.atan(currentValue));
             case "sinh" -> Math.sinh(currentValue);
             case "cosh" -> Math.cosh(currentValue);
             case "tanh" -> Math.tanh(currentValue);
