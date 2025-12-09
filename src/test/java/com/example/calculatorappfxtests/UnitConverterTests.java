@@ -2268,6 +2268,474 @@ public class UnitConverterTests {
             assertEquals("0", outputDisplay.getText());
             helper.clear();
         }
+
+        @Test
+        @DisplayName("Kibibytes tests")
+        void KibibytesTests() {
+            fromUnit.setValue("Kibibytes(KiB)");
+            toUnit.setValue("Bits(bit)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("81920", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Kibibytes(KiB)");
+            toUnit.setValue("Bytes(B)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1024", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Kibibytes(KiB)");
+            toUnit.setValue("Kilobytes(KB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1.024", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Kibibytes(KiB)");
+            toUnit.setValue("Megabytes(MB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.001024", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Kibibytes(KiB)");
+            toUnit.setValue("Mebibytes(MiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000977", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Kibibytes(KiB)");
+            toUnit.setValue("Gigabytes(GB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000001", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Kibibytes(KiB)");
+            toUnit.setValue("Gibibytes(GiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000001", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Kibibytes(KiB)");
+            toUnit.setValue("Terabytes(TB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Kibibytes(KiB)");
+            toUnit.setValue("Tebibytes(TiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0", outputDisplay.getText());
+            helper.clear();
+        }
+
+        @Test
+        @DisplayName("Megabytes tests")
+        void MegabytesTests() {
+            fromUnit.setValue("Megabytes(MB)");
+            toUnit.setValue("Bits(bit)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("80000000", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Megabytes(MB)");
+            toUnit.setValue("Bytes(B)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1000000", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Megabytes(MB)");
+            toUnit.setValue("Kilobytes(KB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1000", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Megabytes(MB)");
+            toUnit.setValue("Kibibytes(KiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("976.5625", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Megabytes(MB)");
+            toUnit.setValue("Mebibytes(MiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.953674", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Megabytes(MB)");
+            toUnit.setValue("Gigabytes(GB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.001", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Megabytes(MB)");
+            toUnit.setValue("Gibibytes(GiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000931", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Megabytes(MB)");
+            toUnit.setValue("Terabytes(TB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000001", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Megabytes(MB)");
+            toUnit.setValue("Tebibytes(TiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000001", outputDisplay.getText());
+            helper.clear();
+        }
+
+        @Test
+        @DisplayName("Mebibytes tests")
+        void MebibytesTests() {
+            fromUnit.setValue("Mebibytes(MiB)");
+            toUnit.setValue("Bits(bit)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("83886080", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Mebibytes(MiB)");
+            toUnit.setValue("Bytes(B)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1048576", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Mebibytes(MiB)");
+            toUnit.setValue("Kilobytes(KB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1048.576", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Mebibytes(MiB)");
+            toUnit.setValue("Kibibytes(KiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1024", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Mebibytes(MiB)");
+            toUnit.setValue("Megabytes(MB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1.048576", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Mebibytes(MiB)");
+            toUnit.setValue("Gigabytes(GB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.001049", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Mebibytes(MiB)");
+            toUnit.setValue("Gibibytes(GiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000977", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Mebibytes(MiB)");
+            toUnit.setValue("Terabytes(TB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000001", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Mebibytes(MiB)");
+            toUnit.setValue("Tebibytes(TiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000001", outputDisplay.getText());
+            helper.clear();
+        }
+
+        @Test
+        @DisplayName("Gigabytes tests")
+        void GigabytesTests() {
+            fromUnit.setValue("Gigabytes(GB)");
+            toUnit.setValue("Bits(bit)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("80000000000", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Gigabytes(GB)");
+            toUnit.setValue("Bytes(B)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1000000000", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Gigabytes(GB)");
+            toUnit.setValue("Kilobytes(KB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1000000", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Gigabytes(GB)");
+            toUnit.setValue("Kibibytes(KiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("976562.5", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Gigabytes(GB)");
+            toUnit.setValue("Megabytes(MB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1000", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Gigabytes(GB)");
+            toUnit.setValue("Mebibytes(MiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("953.674316", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Gigabytes(GB)");
+            toUnit.setValue("Gibibytes(GiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.931323", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Gigabytes(GB)");
+            toUnit.setValue("Terabytes(TB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.001", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Gigabytes(GB)");
+            toUnit.setValue("Tebibytes(TiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000909", outputDisplay.getText());
+            helper.clear();
+        }
+
+        @Test
+        @DisplayName("Gibibytes tests")
+        void GibibytesTests() {
+            fromUnit.setValue("Gibibytes(GiB)");
+            toUnit.setValue("Bits(bit)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("85899345920", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Gibibytes(GiB)");
+            toUnit.setValue("Bytes(B)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1073741824", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Gibibytes(GiB)");
+            toUnit.setValue("Kilobytes(KB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1073741.824", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Gibibytes(GiB)");
+            toUnit.setValue("Kibibytes(KiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1048576", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Gibibytes(GiB)");
+            toUnit.setValue("Megabytes(MB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1073.741824", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Gibibytes(GiB)");
+            toUnit.setValue("Mebibytes(MiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1024", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Gibibytes(GiB)");
+            toUnit.setValue("Gigabytes(GB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1.073742", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Gibibytes(GiB)");
+            toUnit.setValue("Terabytes(TB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.001074", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Gibibytes(GiB)");
+            toUnit.setValue("Tebibytes(TiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000977", outputDisplay.getText());
+            helper.clear();
+        }
+
+        @Test
+        @DisplayName("Terabytes tests")
+        void TerabytesTests() {
+            fromUnit.setValue("Terabytes(TB)");
+            toUnit.setValue("Bits(bit)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("80000000000000", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Terabytes(TB)");
+            toUnit.setValue("Bytes(B)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1000000000000", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Terabytes(TB)");
+            toUnit.setValue("Kilobytes(KB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1000000000", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Terabytes(TB)");
+            toUnit.setValue("Kibibytes(KiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("976562500", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Terabytes(TB)");
+            toUnit.setValue("Megabytes(MB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1000000", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Terabytes(TB)");
+            toUnit.setValue("Mebibytes(MiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("953674.316406", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Terabytes(TB)");
+            toUnit.setValue("Gigabytes(GB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1000", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Terabytes(TB)");
+            toUnit.setValue("Gibibytes(GiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("931.322575", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Terabytes(TB)");
+            toUnit.setValue("Tebibytes(TiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.909495", outputDisplay.getText());
+            helper.clear();
+        }
+
+        @Test
+        @DisplayName("Tebibytes tests")
+        void TebibytesTests() {
+            fromUnit.setValue("Tebibytes(TiB)");
+            toUnit.setValue("Bits(bit)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("87960930222080", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Tebibytes(TiB)");
+            toUnit.setValue("Bytes(B)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1099511627776", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Tebibytes(TiB)");
+            toUnit.setValue("Kilobytes(KB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1099511627.776", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Tebibytes(TiB)");
+            toUnit.setValue("Kibibytes(KiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1073741824", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Tebibytes(TiB)");
+            toUnit.setValue("Megabytes(MB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1099511.627776", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Tebibytes(TiB)");
+            toUnit.setValue("Mebibytes(MiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1048576", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Tebibytes(TiB)");
+            toUnit.setValue("Gigabytes(GB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1099.511628", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Tebibytes(TiB)");
+            toUnit.setValue("Gibibytes(GiB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1024", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Tebibytes(TiB)");
+            toUnit.setValue("Terabytes(TB)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1.099512", outputDisplay.getText());
+        }
     }
 
     @Nested
@@ -2365,86 +2833,150 @@ public class UnitConverterTests {
         }
 
         @Test
-        @DisplayName("Miles per hour tests")
-        void MilesPerHourTests() {
-            // mi/h to m/s
-            fromUnit.setValue("Miles per hour (mi/h)");
+        @DisplayName("Meters per hour tests")
+        void MetersPerHourTests() {
+            fromUnit.setValue("Meters per hour (m/h)");
             toUnit.setValue("Meters per second (m/s)");
-            inputDisplay.setText("1");
-            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
-            assertEquals("0.44704", outputDisplay.getText());
-            helper.clear();
-
-            // mi/h to m/h
-            fromUnit.setValue("Miles per hour (mi/h)");
-            toUnit.setValue("Meters per hour (m/h)");
-            inputDisplay.setText("1");
-            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
-            assertEquals("1609.34398", outputDisplay.getText());
-            helper.clear();
-
-            // mi/h to km/s
-            fromUnit.setValue("Miles per hour (mi/h)");
-            toUnit.setValue("Kilometers per second (km/s)");
-            inputDisplay.setText("1");
-            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
-            assertEquals("0.000447", outputDisplay.getText());
-            helper.clear();
-
-            // mi/h to km/h
-            fromUnit.setValue("Miles per hour (mi/h)");
-            toUnit.setValue("Kilometers per hour (km/h)");
-            inputDisplay.setText("1");
-            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
-            assertEquals("1.609344", outputDisplay.getText());
-            helper.clear();
-
-            // mi/h to in/s
-            fromUnit.setValue("Miles per hour (mi/h)");
-            toUnit.setValue("Inches per second (in/s)");
-            inputDisplay.setText("1");
-            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
-            assertEquals("17.6", outputDisplay.getText());
-            helper.clear();
-
-            // mi/h to in/h
-            fromUnit.setValue("Miles per hour (mi/h)");
-            toUnit.setValue("Inches per hour (in/h)");
-            inputDisplay.setText("1");
-            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
-            assertEquals("63360.113541", outputDisplay.getText());
-            helper.clear();
-
-            // mi/h to ft/s
-            fromUnit.setValue("Miles per hour (mi/h)");
-            toUnit.setValue("Feet per second (ft/s)");
-            inputDisplay.setText("1");
-            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
-            assertEquals("1.466667", outputDisplay.getText());
-            helper.clear();
-
-            // mi/h to ft/h
-            fromUnit.setValue("Miles per hour (mi/h)");
-            toUnit.setValue("Feet per hour (ft/h)");
-            inputDisplay.setText("1");
-            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
-            assertEquals("5280.001098", outputDisplay.getText());
-            helper.clear();
-
-            // mi/h to mi/s
-            fromUnit.setValue("Miles per hour (mi/h)");
-            toUnit.setValue("Miles per second (mi/s)");
             inputDisplay.setText("1");
             helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
             assertEquals("0.000278", outputDisplay.getText());
             helper.clear();
 
-            // mi/h to knots
-            fromUnit.setValue("Miles per hour (mi/h)");
+            fromUnit.setValue("Meters per hour (m/h)");
+            toUnit.setValue("Kilometers per second (km/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Meters per hour (m/h)");
+            toUnit.setValue("Kilometers per hour (km/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.001", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Meters per hour (m/h)");
+            toUnit.setValue("Inches per second (in/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.010936", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Meters per hour (m/h)");
+            toUnit.setValue("Inches per hour (in/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("39.37015", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Meters per hour (m/h)");
+            toUnit.setValue("Feet per second (ft/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000911", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Meters per hour (m/h)");
+            toUnit.setValue("Feet per hour (ft/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("3.280841", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Meters per hour (m/h)");
+            toUnit.setValue("Miles per second (mi/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Meters per hour (m/h)");
+            toUnit.setValue("Miles per hour (mi/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000621", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Meters per hour (m/h)");
             toUnit.setValue("Knots (kn)");
             inputDisplay.setText("1");
             helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
-            assertEquals("0.868976", outputDisplay.getText());
+            assertEquals("0.00054", outputDisplay.getText());
+            helper.clear();
+        }
+
+        @Test
+        @DisplayName("Kilometers per second tests")
+        void KilometersPerSecondTests() {
+            fromUnit.setValue("Kilometers per second (km/s)");
+            toUnit.setValue("Meters per second (m/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1000", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Kilometers per second (km/s)");
+            toUnit.setValue("Meters per hour (m/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("3599999.955026", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Kilometers per second (km/s)");
+            toUnit.setValue("Kilometers per hour (km/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("3600", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Kilometers per second (km/s)");
+            toUnit.setValue("Inches per second (in/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("39370.078753", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Kilometers per second (km/s)");
+            toUnit.setValue("Inches per hour (in/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("141732537.449274", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Kilometers per second (km/s)");
+            toUnit.setValue("Feet per second (ft/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("3280.839895", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Kilometers per second (km/s)");
+            toUnit.setValue("Feet per hour (ft/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("11811026.078741", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Kilometers per second (km/s)");
+            toUnit.setValue("Miles per second (mi/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.621371", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Kilometers per second (km/s)");
+            toUnit.setValue("Miles per hour (mi/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("2236.936292", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Kilometers per second (km/s)");
+            toUnit.setValue("Knots (kn)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1943.844492", outputDisplay.getText());
             helper.clear();
         }
 
@@ -2531,6 +3063,529 @@ public class UnitConverterTests {
             assertEquals("0.539957", outputDisplay.getText());
             helper.clear();
         }
+
+        @Test
+        @DisplayName("Inches per second tests")
+        void InchesPerSecondTests() {
+            fromUnit.setValue("Inches per second (in/s)");
+            toUnit.setValue("Meters per second (m/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.0254", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Inches per second (in/s)");
+            toUnit.setValue("Meters per hour (m/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("91.439999", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Inches per second (in/s)");
+            toUnit.setValue("Kilometers per second (km/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000025", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Inches per second (in/s)");
+            toUnit.setValue("Kilometers per hour (km/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.09144", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Inches per second (in/s)");
+            toUnit.setValue("Inches per hour (in/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("3600.00645", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Inches per second (in/s)");
+            toUnit.setValue("Feet per second (ft/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.083333", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Inches per second (in/s)");
+            toUnit.setValue("Feet per hour (ft/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("300.000062", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Inches per second (in/s)");
+            toUnit.setValue("Miles per second (mi/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000016", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Inches per second (in/s)");
+            toUnit.setValue("Miles per hour (mi/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.056818", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Inches per second (in/s)");
+            toUnit.setValue("Knots (kn)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.049374", outputDisplay.getText());
+            helper.clear();
+        }
+
+        @Test
+        @DisplayName("Inches per hour tests")
+        void InchesPerHourTests() {
+            fromUnit.setValue("Inches per hour (in/h)");
+            toUnit.setValue("Meters per second (m/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000007", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Inches per hour (in/h)");
+            toUnit.setValue("Meters per hour (m/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.0254", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Inches per hour (in/h)");
+            toUnit.setValue("Kilometers per second (km/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Inches per hour (in/h)");
+            toUnit.setValue("Kilometers per hour (km/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000025", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Inches per hour (in/h)");
+            toUnit.setValue("Inches per second (in/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000278", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Inches per hour (in/h)");
+            toUnit.setValue("Feet per second (ft/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000023", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Inches per hour (in/h)");
+            toUnit.setValue("Feet per hour (ft/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.083333", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Inches per hour (in/h)");
+            toUnit.setValue("Miles per second (mi/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Inches per hour (in/h)");
+            toUnit.setValue("Miles per hour (mi/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000016", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Inches per hour (in/h)");
+            toUnit.setValue("Knots (kn)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000014", outputDisplay.getText());
+            helper.clear();
+        }
+
+        @Test
+        @DisplayName("Feet per second tests")
+        void FeetPerSecondTests() {
+            fromUnit.setValue("Feet per second (ft/s)");
+            toUnit.setValue("Meters per second (m/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.3048", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Feet per second (ft/s)");
+            toUnit.setValue("Meters per hour (m/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1097.279986", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Feet per second (ft/s)");
+            toUnit.setValue("Kilometers per second (km/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000305", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Feet per second (ft/s)");
+            toUnit.setValue("Kilometers per hour (km/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1.09728", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Feet per second (ft/s)");
+            toUnit.setValue("Inches per second (in/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("12", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Feet per second (ft/s)");
+            toUnit.setValue("Inches per hour (in/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("43200.077413", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Feet per second (ft/s)");
+            toUnit.setValue("Feet per hour (ft/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("3600.000749", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Feet per second (ft/s)");
+            toUnit.setValue("Miles per second (mi/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000189", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Feet per second (ft/s)");
+            toUnit.setValue("Miles per hour (mi/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.681818", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Feet per second (ft/s)");
+            toUnit.setValue("Knots (kn)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.592484", outputDisplay.getText());
+            helper.clear();
+        }
+
+        @Test
+        @DisplayName("Feet per hour tests")
+        void FeetPerHourTests() {
+            fromUnit.setValue("Feet per hour (ft/h)");
+            toUnit.setValue("Meters per second (m/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000085", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Feet per hour (ft/h)");
+            toUnit.setValue("Meters per hour (m/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.3048", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Feet per hour (ft/h)");
+            toUnit.setValue("Kilometers per second (km/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Feet per hour (ft/h)");
+            toUnit.setValue("Kilometers per hour (km/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000305", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Feet per hour (ft/h)");
+            toUnit.setValue("Inches per second (in/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.003333", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Feet per hour (ft/h)");
+            toUnit.setValue("Inches per hour (in/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("12.000019", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Feet per hour (ft/h)");
+            toUnit.setValue("Feet per second (ft/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000278", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Feet per hour (ft/h)");
+            toUnit.setValue("Miles per second (mi/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Feet per hour (ft/h)");
+            toUnit.setValue("Miles per hour (mi/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000189", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Feet per hour (ft/h)");
+            toUnit.setValue("Knots (kn)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000165", outputDisplay.getText());
+            helper.clear();
+        }
+
+        @Test
+        @DisplayName("Miles per second tests")
+        void MilesPerSecondTests() {
+            fromUnit.setValue("Miles per second (mi/s)");
+            toUnit.setValue("Meters per second (m/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1609.344", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Miles per second (mi/s)");
+            toUnit.setValue("Meters per hour (m/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("5793638.327621", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Miles per second (mi/s)");
+            toUnit.setValue("Kilometers per second (km/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1.609344", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Miles per second (mi/s)");
+            toUnit.setValue("Kilometers per hour (km/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("5793.6384", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Miles per second (mi/s)");
+            toUnit.setValue("Inches per second (in/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("63360.00002", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Miles per second (mi/s)");
+            toUnit.setValue("Inches per hour (in/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("228096408.748764", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Miles per second (mi/s)");
+            toUnit.setValue("Feet per second (ft/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("5280", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Miles per second (mi/s)");
+            toUnit.setValue("Miles per hour (mi/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("3600", outputDisplay.getText());
+            helper.clear();
+
+            fromUnit.setValue("Miles per second (mi/s)");
+            toUnit.setValue("Knots (kn)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("3128.314471", outputDisplay.getText());
+            helper.clear();
+        }
+
+        @Test
+        @DisplayName("Miles per hour tests")
+        void MilesPerHourTests() {
+            // mi/h to m/s
+            fromUnit.setValue("Miles per hour (mi/h)");
+            toUnit.setValue("Meters per second (m/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.44704", outputDisplay.getText());
+            helper.clear();
+
+            // mi/h to m/h
+            fromUnit.setValue("Miles per hour (mi/h)");
+            toUnit.setValue("Meters per hour (m/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1609.34398", outputDisplay.getText());
+            helper.clear();
+
+            // mi/h to km/s
+            fromUnit.setValue("Miles per hour (mi/h)");
+            toUnit.setValue("Kilometers per second (km/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000447", outputDisplay.getText());
+            helper.clear();
+
+            // mi/h to km/h
+            fromUnit.setValue("Miles per hour (mi/h)");
+            toUnit.setValue("Kilometers per hour (km/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1.609344", outputDisplay.getText());
+            helper.clear();
+
+            // mi/h to in/s
+            fromUnit.setValue("Miles per hour (mi/h)");
+            toUnit.setValue("Inches per second (in/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("17.6", outputDisplay.getText());
+            helper.clear();
+
+            // mi/h to in/h
+            fromUnit.setValue("Miles per hour (mi/h)");
+            toUnit.setValue("Inches per hour (in/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("63360.113541", outputDisplay.getText());
+            helper.clear();
+
+            // mi/h to ft/s
+            fromUnit.setValue("Miles per hour (mi/h)");
+            toUnit.setValue("Feet per second (ft/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1.466667", outputDisplay.getText());
+            helper.clear();
+
+            // mi/h to ft/h
+            fromUnit.setValue("Miles per hour (mi/h)");
+            toUnit.setValue("Feet per hour (ft/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("5280.001098", outputDisplay.getText());
+            helper.clear();
+
+            // mi/h to mi/s
+            fromUnit.setValue("Miles per hour (mi/h)");
+            toUnit.setValue("Miles per second (mi/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000278", outputDisplay.getText());
+            helper.clear();
+
+            // mi/h to knots
+            fromUnit.setValue("Miles per hour (mi/h)");
+            toUnit.setValue("Knots (kn)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.868976", outputDisplay.getText());
+            helper.clear();
+        }
+
+        @Test
+        @DisplayName("Knots Tests")
+        void KnotsTests() {
+            //Knots to Meters per second
+            fromUnit.setValue("Knots (kn)");
+            toUnit.setValue("Meters per second (m/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.514444", outputDisplay.getText());
+            helper.clear();
+
+            //Knots to meters per hour
+            fromUnit.setValue("Knots (kn)");
+            toUnit.setValue("Meters per hour (m/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1851.999977", outputDisplay.getText());
+            helper.clear();
+            //Knots to KM per second
+            fromUnit.setValue("Knots (kn)");
+            toUnit.setValue("Kilometers per second (km/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.000514", outputDisplay.getText());
+            helper.clear();
+            //Knots to KM per hour
+            fromUnit.setValue("Knots (kn)");
+            toUnit.setValue("Kilometers per hour (km/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1.852", outputDisplay.getText());
+            helper.clear();
+            //kn to in/s
+            fromUnit.setValue("Knots (kn)");
+            toUnit.setValue("Inches per second (in/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("20.253718", outputDisplay.getText());
+            helper.clear();
+            //kn to in/h
+            fromUnit.setValue("Knots (kn)");
+            toUnit.setValue("Inches per hour (in/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("72913.516486", outputDisplay.getText());
+            helper.clear();
+            //kn to ft/s
+            fromUnit.setValue("Knots (kn)");
+            toUnit.setValue("Feet per second (ft/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1.68781", outputDisplay.getText());
+            helper.clear();
+            //kn to ft/h
+            fromUnit.setValue("Knots (kn)");
+            toUnit.setValue("Feet per hour (ft/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("6076.116749", outputDisplay.getText());
+            helper.clear();
+            //kn to mi/s
+            fromUnit.setValue("Knots (kn)");
+            toUnit.setValue("Miles per second (mi/s)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("0.00032", outputDisplay.getText());
+            helper.clear();
+            //kn to mi/h
+            fromUnit.setValue("Knots (kn)");
+            toUnit.setValue("Miles per hour (mi/h)");
+            inputDisplay.setText("1");
+            helper.convert(inputDisplay, outputDisplay, fromUnit.getValue(), toUnit.getValue());
+            assertEquals("1.150779", outputDisplay.getText());
+        }
+
 
     }
 
