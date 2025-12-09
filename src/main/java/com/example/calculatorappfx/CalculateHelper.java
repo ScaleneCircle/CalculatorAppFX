@@ -79,6 +79,11 @@ public class CalculateHelper {
             return;
         };
 
+        if(isConstant(operation)) {
+            insertConstant(operation);
+            return;
+        }
+
         double currentNumber = Double.parseDouble(display.getText());
 
         if (!pendingOperation.isEmpty()) {
@@ -161,6 +166,10 @@ public class CalculateHelper {
             factorial *= i;
         }
         return factorial;
+    }
+
+    public boolean isConstant(String operation) {
+        return (operation.equals("e") || operation.equals("π"));
     }
 
     /**

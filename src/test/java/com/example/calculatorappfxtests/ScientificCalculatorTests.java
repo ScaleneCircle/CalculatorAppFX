@@ -45,7 +45,7 @@ public class ScientificCalculatorTests {
         helper.append("0");
         helper.setOperation("sin");
         double result = Double.parseDouble(display.getText());
-        assertEquals(Math.sin(90), result, 0.001);
+        assertEquals(1, result, 0.001);
 
         helper.clear();
 
@@ -61,7 +61,7 @@ public class ScientificCalculatorTests {
         helper.append("0");
         helper.setOperation("cos");
         double result2 = Double.parseDouble(display.getText());
-        assertEquals(Math.cos(60), result2, 0.001);
+        assertEquals(0.5000000000000001, result2, 0.001);
 
         helper.clear();
 
@@ -70,7 +70,77 @@ public class ScientificCalculatorTests {
         helper.append("5");
         helper.setOperation("tan");
         double result3 = Double.parseDouble(display.getText());
-        assertEquals(Math.tan(45), result3, 0.001);
+        assertEquals(0.9999999999999999, result3, 0.001);
+
+        helper.clear();
+
+        //Test Six: inverse sin
+        helper.append(".5");
+        helper.setOperation("sin⁻¹");
+        double result6 = Double.parseDouble(display.getText());
+        assertEquals(Math.toDegrees(Math.asin(.5)), result6, 0.001);
+
+        helper.clear();
+        //Test Seven: inverse cos
+        helper.append("1");
+        helper.setOperation("cos⁻¹");
+        double result7 = Double.parseDouble(display.getText());
+        assertEquals(Math.acos(1), result7, 0.001);
+
+        helper.clear();
+        //Test Eight inverse tan
+        helper.append("4");
+        helper.append("5");
+        helper.setOperation("tan⁻¹");
+        double result8 = Double.parseDouble(display.getText());
+        assertEquals(Math.toDegrees(Math.atan(45)), result8, 0.001);
+
+        helper.clear();
+        //Test Nine: sinh
+        helper.append("4");
+        helper.append("5");
+        helper.setOperation("sinh");
+        double result9 = Double.parseDouble(display.getText());
+        assertEquals(Math.sinh(45), result9, 0.001);
+
+        helper.clear();
+        //Test ten: cosh
+        helper.append("4");
+        helper.append("5");
+        helper.setOperation("cosh");
+        double result10 = Double.parseDouble(display.getText());
+        assertEquals(Math.cosh(45), result10, 0.001);
+
+        helper.clear();
+        //Test Eleven: tanh
+        helper.append("4");
+        helper.append("5");
+        helper.setOperation("tanh");
+        double result11 = Double.parseDouble(display.getText());
+        assertEquals(Math.tanh(45), result11, 0.001);
+
+        helper.clear();
+        //Test Twelve: inverse sinh
+        helper.append("3");
+        helper.append("0");
+        helper.setOperation("sinh⁻¹");
+        double result12 = Double.parseDouble(display.getText());
+        assertEquals(4.09462222433053, result12, 0.001);
+
+        helper.clear();
+        //Test thirteen: inverse cosh
+        helper.append("4");
+        helper.append("5");
+        helper.setOperation("cosh⁻¹");
+        double result13 = Double.parseDouble(display.getText());
+        assertEquals(4.499686190671499, result13, 0.001);
+
+        helper.clear();
+        //Test Fourteen: inverse tanh
+        helper.append(".5");
+        helper.setOperation("tanh⁻¹");
+        double result14 = Double.parseDouble(display.getText());
+        assertEquals(0.5493061443340549, result14, 0.001);
     }
 
     @Test
@@ -200,6 +270,14 @@ public class ScientificCalculatorTests {
         helper.append("0");
         helper.setOperation("√");
         assertEquals("10", display.getText());
+
+        helper.clear();
+        //Test Six: cube root(27)
+        helper.append("27");
+        helper.setOperation("³√");
+        assertEquals("3", display.getText());
+
+
     }
 
     @Test
@@ -239,6 +317,50 @@ public class ScientificCalculatorTests {
     }
 
     @Test
+    @DisplayName("Exponent Tests")
+    void exponentTests() {
+        // squared test
+        helper.append("7");
+        helper.setOperation("x²");
+        helper.calculateResult();
+        double result = Double.parseDouble(display.getText());
+        assertEquals(49, result, 0.0001);
+
+        helper.clear();
+        // cubed test
+        helper.append("3");
+        helper.setOperation("x³");
+        double result2 = Double.parseDouble(display.getText());
+        assertEquals(27, result2, 0.0001);
+
+        helper.clear();
+        // x ^ y test
+        helper.append("6");
+        helper.setOperation("xʸ");
+        helper.append("4");
+        helper.calculateResult();
+        double result3 = Double.parseDouble(display.getText());
+        assertEquals(1296, result3, 0.0001);
+
+        helper.clear();
+        // e ^ x test
+        helper.append("3");
+        helper.setOperation("eˣ");
+        helper.calculateResult();
+        double result4 = Double.parseDouble(display.getText());
+        assertEquals(20.085536923187664, result4, 0.0001);
+
+        helper.clear();
+        // 2 ^ x test
+        helper.append("8");
+        helper.setOperation("2ˣ");
+        helper.calculateResult();
+        double result5 = Double.parseDouble(display.getText());
+        assertEquals(256, result5, 0.0001);
+    }
+
+
+    @Test
     @DisplayName("Mixed Equation Tests")
     void mixedEquationTests() {
         //Test One: sin(30) + cos(60)
@@ -251,7 +373,7 @@ public class ScientificCalculatorTests {
         helper.setOperation("cos");
         helper.calculateResult();
         double result = Double.parseDouble(display.getText());
-        assertEquals(Math.sin(30) + Math.cos(60), result, 0.0001);
+        assertEquals(1, result, 0.0001);
 
         helper.clear();
 
@@ -275,6 +397,18 @@ public class ScientificCalculatorTests {
         helper.calculateResult();
         double result2 = Double.parseDouble(display.getText());
         assertEquals(11.0, result2, 0.01);
+
+        helper.clear();
+
+        //Test Four: 15 + 5!
+        helper.append("1");
+        helper.append("5");
+        helper.setOperation("+");
+        helper.append("5");
+        helper.setOperation("x!");
+        helper.calculateResult();
+        double result3 = Double.parseDouble(display.getText());
+        assertEquals(135, result3, 0.0001);
     }
 
 }

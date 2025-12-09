@@ -92,6 +92,19 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.0.0</version>
       </plugin>
+      <plugin>
+        <groupId>org.panteleyev</groupId>
+        <artifactId>jpackage-maven-plugin</artifactId>
+        <version>1.6.0</version>
+        <configuration>
+          <name>Calculator</name>
+          <appVersion>1.0</appVersion>
+          <destination>target/dist</destination>
+          <module>com.example.calculatorappfx/com.example.calculatorappfx.Main</module>
+          <runtimeImage>target/app</runtimeImage>
+          <type>APP_IMAGE</type> <!-- Just creates exe, no installer -->
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 </project>

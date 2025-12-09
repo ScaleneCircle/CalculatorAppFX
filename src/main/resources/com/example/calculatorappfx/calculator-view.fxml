@@ -109,7 +109,7 @@
                               <String fx:value="circle-button" />
                            </styleClass></Button>
                         <Button mnemonicParsing="false" onAction="#handleToggle" styleClass="circle-button" text="⇄" />
-                        <Button fx:id="radianOrDegreeButton" mnemonicParsing="false" onAction="#radianOrDegrees" styleClass="circle-button" text="Radians" />
+                        <Button fx:id="radianOrDegreeButton" mnemonicParsing="false" onAction="#radianOrDegrees" styleClass="circle-button" text="Degree" />
                         <Button fx:id="sqrtButton" mnemonicParsing="false" onAction="#handleOperator" styleClass="circle-button" text="√" />
                         <Button mnemonicParsing="false" onAction="#handleOperator" style="-fx-text-fill: #106117;" styleClass="circle-button" text="\%" />
                         <Button mnemonicParsing="false" onAction="#handleOperator" style="-fx-text-fill: #106117;" styleClass="circle-button" text="/" />
@@ -151,8 +151,8 @@
                   <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.rowIndex="4">
                     <buttons>
                         <Button fx:id="absButton" mnemonicParsing="false" onAction="#handleOperator" styleClass="circle-button" text="|x|" />
-                      <Button fx:id="piButton" mnemonicParsing="false" onAction="#handleConstant" styleClass="circle-button" text="π" />
-                        <Button fx:id="eButton" mnemonicParsing="false" onAction="#handleConstant" styleClass="circle-button" text="e" />
+                      <Button fx:id="piButton" mnemonicParsing="false" onAction="#handleOperator" styleClass="circle-button" text="π" />
+                        <Button fx:id="eButton" mnemonicParsing="false" onAction="#handleOperator" styleClass="circle-button" text="e" />
                         <Button mnemonicParsing="false" onAction="#negate" styleClass="circle-button" text="+/-" />
                         <Button mnemonicParsing="false" onAction="#handleNumber" styleClass="circle-button" text="0" />
                         <Button mnemonicParsing="false" onAction="#handleNumber" styleClass="circle-button" text="." />
